@@ -1,0 +1,63 @@
+// ############################
+// Vars, Placeholders, Utilities, & Imports
+// ############################
+
+$color-brand: #ff6b3d;
+$color-text: #111;
+	$color-text-light: #888;
+$color-editing: #fffcd9;
+$color-light-gray: #eee;
+$color-success: #39cd20;
+$color-danger: #c43a3a;
+
+
+@mixin context( $bp ) {
+    @if $bp == hand-only {
+        @media (max-width: 30em )
+        { @content }
+    }
+    @else if $bp == small-tablet {
+        @media (min-width: 30em )
+        { @content }
+    }
+    @else if $bp == tablet {
+        @media (min-width: 47.5em )
+        { @content }
+    }
+    @else if $bp == monitor {
+        @media (min-width: 62.5em )
+        { @content }
+    }
+    @else if $bp == monitor-large {
+        @media (min-width: 90.25em )
+        { @content }
+    }
+}
+
+
+%display-inline-block {
+	display: inline-block;
+}
+
+%vertical-align-middle {
+	vertical-align: middle;
+}
+
+%hidden-on-hand {
+	@include context(hand-only) {
+		display:none;
+	}
+}
+
+%default-transition {
+	transition:.15s ease-in-out all;
+	-webkit-transition:.15s ease-in-out all;
+}
+
+
+
+@import 'debug';
+@import 'reset';
+@import 'app';
+@import 'staff';
+

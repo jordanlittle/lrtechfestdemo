@@ -1,0 +1,32 @@
+[data-bind="dump: staffViewModel"] {
+	display:none;
+
+	@include context(tablet) {
+		display:block;
+		cursor:s-resize;
+		position:fixed;
+		z-index: 9999;
+		bottom:0;
+		right:0;
+		background-color: rgba(0,0,0,.75);
+		color: #39ff14;
+		font-family:monaco,monospace;
+		line-height: 1.3;
+		font-size:11px;
+		padding:20px;
+		height:100%;
+		overflow-y:scroll;
+		-webkit-overflow-scrolling: touch;
+
+		&.shrunk {
+			transform:translateY(95%);
+			background:#000;
+			overflow: hidden;
+			cursor:n-resize;
+
+			&:hover {
+				transform:translateY(92%);
+			}
+		}
+	}
+}

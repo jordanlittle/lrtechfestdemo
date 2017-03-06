@@ -1,0 +1,216 @@
+// ############################
+// Global viewport normalization (helps a ton with annoying horiz scrollbars) and generic styles
+// ############################
+
+*,
+*:before,
+*:after {
+	box-sizing:border-box;
+}
+
+body,
+html {
+	width:100%;
+	height:100%;
+}
+
+body {
+	background-color: #f3f3f3;
+	line-height:1;
+	font-size: 100%;
+	font-family: Lato,sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-size:2rem;
+	margin-bottom:2rem;
+
+	.heading-action {
+		float:right;
+		text-align: right;
+		font-size: .8125rem;
+		color: $color-text-light;
+
+		span {
+			@extend %hidden-on-hand;
+			@extend %default-transition;
+			padding-left:.5rem;
+			position:relative;
+			top:1px;
+		}
+
+		i {
+			@extend %default-transition;
+			@extend %vertical-align-middle;
+			font-size: 2rem;
+			color: $color-success;
+		}
+
+		&:hover {
+			color: $color-text; 
+
+			i {
+				color: darken($color-success, 15%);
+			}
+		}
+	}
+}
+
+.employee-of-the-month-heading {
+	font-size: .85rem;
+	margin-bottom:.5rem;
+	text-align: center;
+
+	@include context(tablet) {
+		margin-bottom:1rem;
+		text-align: left;
+	}
+
+	i {
+		@extend %vertical-align-middle;
+		color: $color-brand;
+		font-size: 2rem;
+	}
+}
+
+
+
+
+// ############################
+// Site Header
+// ############################
+
+.site-header {
+	background: #111;
+	padding: .25rem .5rem;
+	position:relative;
+
+	@include context(tablet) {
+		padding: .25rem 2rem;
+	}
+}
+	
+	.site-header #logo {
+		@extend %display-inline-block;
+		@extend %vertical-align-middle;
+		width: 4rem;
+		height:auto;
+		vertical-align: middle;
+
+		path {
+			fill: $color-brand;
+		}
+	}
+
+	.logo-text {
+		@extend %display-inline-block;
+		@extend %vertical-align-middle;
+		color: #fff;
+		font-size: 1.125rem;
+		padding-left:1rem;
+
+		@include context(hand-only) {
+			display:none;
+		}
+	}
+
+	.slogan {
+		width:12rem;
+		text-align:right;
+		position:absolute;
+		top:50%;
+		transform:translateY(-50%);
+			-webkit-transform:translateY(-50%);
+		right:.5rem;
+		color: rgba(255,255,255,.5);
+		font-size: .75rem;
+		line-height: 1.5;
+		font-style:italic;
+
+		@include context(tablet) {
+			right:2rem;
+		}
+	}
+
+
+
+
+// ############################
+// Layout Containers
+// ############################
+
+.page {
+	padding:.5rem;
+	position:relative;
+
+	@include context(tablet) {
+		padding:2rem;
+	}
+}
+
+.panel {
+	background: #fff;
+	border: 3px solid #ddd;
+	padding: 1rem;
+	border-radius:.5rem;
+
+	@include context(tablet) {
+		padding: 2rem;
+	}
+
+	@include context(monitor-large) {
+		padding: 2rem 4rem;
+	}
+}
+
+.main {
+	width:100%;
+
+	@include context(tablet) {
+		width:70%;
+	}
+}
+
+.secondary {
+	width:100%;
+	margin-bottom:1rem;
+
+	@include context(tablet) {
+		position:absolute;
+		top:2rem;
+		right:2rem;
+		width:calc(30% - 3rem);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
